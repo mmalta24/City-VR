@@ -165,13 +165,47 @@
         ></a-entity>
         <!--waves   como fazer uma barra de som-->
         <a-entity id="coluna" 
-        position="-10.2 1.15 12" sound="src: #waves; autoplay: true; loop:true"
+        position="-13 1.15 6.5" sound="src: #waves; autoplay: true; loop:true"
         ></a-entity>
         <a-entity id="coluna" 
         position="-10.2 8.15 12" sound="src: #seagulls; autoplay: true; loop:true; volume:0.25"
         ></a-entity>
-        <!--Luz-->
-        
+        <!--Car3Spots-->
+        <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
+        position="1.55288 1.72217 17.88504" 
+        animation-mixer=""
+        animation="property: position;
+        from: 1.55288 1.72217 39;
+        to: 1.55288 1.72217 -11;
+        loop: true;
+        dur: 8000"
+        ></a-entity>
+        <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
+        position="0.84838 1.72217 16.49" 
+        animation-mixer=""
+        animation="property: position;
+        from: 0.84838 1.72217 39;
+        to: 0.84838 1.72217 -11;
+        loop: true;
+        dur: 8000"
+        ></a-entity>
+        <a-entity light="type: spot; color: #f6ff79; angle: 13.48; intensity: 2.1; penumbra: 0.1; distance: 10" 
+        position="1.55288 1.72217 17.88504" 
+        animation-mixer="" 
+        animation="property: position; 
+        from: 1.55288 1.72217 40; 
+        to: 1.55288 1.72217 -10; 
+        loop: true; 
+        dur: 8000"
+        ></a-entity>
+        <a-entity light="type:spot ; color: #f6ff79; angle: 13.48; intensity: 2.1; penumbra: 0.1; distance: 10"
+        position="0.84838 1.72217 16.49"
+        animation-mixer=""
+        animation="property: position;
+        from: 0.84838 1.72217 40;
+        to: 0.84838 1.72217 -10;
+        loop: true;
+        dur: 8000"></a-entity>
     </a-scene>
 </body>
 </html>
