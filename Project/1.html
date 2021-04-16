@@ -24,6 +24,11 @@
             <a-asset-item id="car2" src="car2/1385 Jeep.gltf"></a-asset-item>
             <a-asset-item id="boat" src="boat/PUSHILIN_Kayak.gltf"></a-asset-item>
             <a-asset-item id="car3" src="car3/1399 Taxi.gltf"></a-asset-item>
+
+            <audio id="motorsound" src="all_sounds/Car Driving-SoundBible.com-923766101.mp3"></audio>
+            <audio id="honksound" src="all_sounds/Horn Honk-SoundBible.com-1162546405.mp3"></audio>
+            <audio id="waves" src="all_sounds/Beach Waves-SoundBible.com-1024681188.mp3"></audio>
+            <audio id="seagulls" src="all_sounds/flock-of-seagulls_daniel-simion.mp3"></audio>
         </a-assets>
         <a-sky src="#sky"></a-sky>
         
@@ -97,6 +102,16 @@
         to: -1.2 1.05 40;
         loop:true;
         dur: 5000"></a-entity>
+        <!--Carsound-->
+        <a-entity id="coluna" 
+        position="-1.2 1.1 -1.7" sound="src: #motorsound; autoplay: true; loop:true"
+        animation-mixer
+        animation="property: position;
+        from: -1.2 1.05 -10;
+        to: -1.2 1.05 40;
+        loop:true;
+        dur: 5000"
+        ></a-entity>
         <!--Car2-->
         <a-entity gltf-model="#car2" position="1.2 1.1 40"scale="0.03 0.03 0.03" rotation="0 180 0" 
         animation-mixer
@@ -106,8 +121,28 @@
         loop:true;
         dur:8000 "
         ></a-entity>
+        <!--Car2sound-->
+        <a-entity id="coluna" 
+        position="1.2 1.1 40" sound="src: #motorsound; autoplay: true; loop:true"
+        animation-mixer
+        animation="property:position;
+        from:1.2 1.1 40;
+        to:1.2 1.1 -10;
+        loop:true;
+        dur:8000"
+        ></a-entity>
         <!--Car3-->
         <a-entity gltf-model="#car3" position="2.8 1.1 0" scale="0.03 0.03 0.03" rotation="0 180 0"
+        animation-mixer
+        animation="property:position;
+        from:2.8 1.1 40;
+        to:2.8 1.1 -10;
+        loop:true;
+        dur:4000 "
+        ></a-entity>
+        <!--Car3sound-->        
+        <a-entity id="coluna" 
+        position="2.8 1.1 0" sound="src: #motorsound; autoplay: true; loop:true"
         animation-mixer
         animation="property:position;
         from:2.8 1.1 40;
@@ -128,9 +163,49 @@
         loop:true;
         dur:6000"
         ></a-entity>
-
-        <!--Luz-->
-        <!--Som-->
+        <!--waves   como fazer uma barra de som-->
+        <a-entity id="coluna" 
+        position="-13 1.15 6.5" sound="src: #waves; autoplay: true; loop:true"
+        ></a-entity>
+        <a-entity id="coluna" 
+        position="-10.2 8.15 12" sound="src: #seagulls; autoplay: true; loop:true; volume:0.25"
+        ></a-entity>
+        <!--Car3Spots-->
+        <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
+        position="1.55288 1.72217 17.88504" 
+        animation-mixer=""
+        animation="property: position;
+        from: 1.55288 1.72217 39;
+        to: 1.55288 1.72217 -11;
+        loop: true;
+        dur: 8000"
+        ></a-entity>
+        <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
+        position="0.84838 1.72217 16.49" 
+        animation-mixer=""
+        animation="property: position;
+        from: 0.84838 1.72217 39;
+        to: 0.84838 1.72217 -11;
+        loop: true;
+        dur: 8000"
+        ></a-entity>
+        <a-entity light="type: spot; color: #f6ff79; angle: 13.48; intensity: 2.1; penumbra: 0.1; distance: 10" 
+        position="1.55288 1.72217 17.88504" 
+        animation-mixer="" 
+        animation="property: position; 
+        from: 1.55288 1.72217 40; 
+        to: 1.55288 1.72217 -10; 
+        loop: true; 
+        dur: 8000"
+        ></a-entity>
+        <a-entity light="type:spot ; color: #f6ff79; angle: 13.48; intensity: 2.1; penumbra: 0.1; distance: 10"
+        position="0.84838 1.72217 16.49"
+        animation-mixer=""
+        animation="property: position;
+        from: 0.84838 1.72217 40;
+        to: 0.84838 1.72217 -10;
+        loop: true;
+        dur: 8000"></a-entity>
     </a-scene>
 </body>
 </html>
