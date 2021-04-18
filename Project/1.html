@@ -25,6 +25,7 @@
             <a-asset-item id="boat" src="boat/PUSHILIN_Kayak.gltf"></a-asset-item>
             <a-asset-item id="car3" src="car3/1399 Taxi.gltf"></a-asset-item>
             <a-asset-item id="seagull" src="seagull/Mesh_Seagull.gltf"></a-asset-item>
+            <a-asset-item id="flyseagull" src="flying_seagull/Flying gull Texture 1.gltf"></a-asset-item>
             <audio id="motorsound" src="all_sounds/Car Driving-SoundBible.com-923766101.mp3"></audio>
             <audio id="honksound" src="all_sounds/Horn Honk-SoundBible.com-1162546405.mp3"></audio>
             <audio id="waves" src="all_sounds/Beach Waves-SoundBible.com-1024681188.mp3"></audio>
@@ -96,8 +97,29 @@
         <a-entity gltf-model="#beach" position="-10.2 1.15 23" scale="0.5 0.5 0.5" rotation="0 -180 0"></a-entity>
         <!--Seagulls-->
         <a-entity gltf-model="seagull/Mesh_Seagull.gltf" position="-7.50229 3.01861 16.26664" scale="0.008 0.008 0.008"></a-entity>
+        <!--flying Seagulls-->
+        <a-entity position="-7.50229 23.01861 16.26664"
+                    animation="property: rotation;
+                                to: 0 -360 0;
+                                loop: true;
+                                dur: 5000;
+                                easing: linear" >
+            <a-entity gltf-model="flying_seagull/Flying gull Texture 1.gltf" 
+            position="7.50229 23.01861 -16.26664"   rotation="0 -40 0"
+            scale="0.008 0.008 0.008"></a-entity>
+            <a-entity gltf-model="flying_seagull/Flying gull Texture 1.gltf" 
+            position="-7.50229 22.01861 6.26664" rotation="0 140 0" 
+            scale="0.008 0.008 0.008"></a-entity>
+            <a-entity gltf-model="flying_seagull/Flying gull Texture 1.gltf" 
+            position="-3.50229 23.01861 10.26664" rotation="0 140 0" 
+            scale="0.008 0.008 0.008"></a-entity>
+            <a-entity gltf-model="flying_seagull/Flying gull Texture 1.gltf" 
+            position="-7.50229 23.01861 16.26664" rotation="0 140 0" 
+            scale="0.008 0.008 0.008"></a-entity>
+        </a-entity>
         <!--Car-->
-        <a-entity gltf-model="#car" position="-1.2 1.1 -1.7" scale="0.03 0.03 0.03"  animation-mixer
+        <a-entity gltf-model="#car" position="-1.2 1.1 -1.7" scale="0.03 0.03 0.03"  
+        animation-mixer
         animation="property: position;
         from: -1.2 1.05 -10;
         to: -1.2 1.05 40;
@@ -127,10 +149,10 @@
         position="1.2 1.1 40" sound="src: #motorsound; autoplay: true; loop:true"
         animation-mixer
         animation="property:position;
-        from:1.2 1.1 40;
-        to:1.2 1.1 -10;
+        from:2.8 1.1 40;
+        to:2.8 1.1 -10;
         loop:true;
-        dur:8000"
+        dur:4000 "
         ></a-entity>
         <!--Car3-->
         <a-entity gltf-model="#car3" position="2.8 1.1 0" scale="0.03 0.03 0.03" rotation="0 180 0"
@@ -172,9 +194,83 @@
         position="-10.2 8.15 12" sound="src: #seagulls; autoplay: true; loop:true; volume:0.25"
         ></a-entity>
         <!--luz_ambiente-->
-        <a-entity 
-        light="type:ambient; color:#332f3f "
+        
+
+
+
+        <!--Car1Spots-->
+        <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
+        position="1.55288 1.72217 17.88504"
+        animation-mixer
+        animation="property: position;
+        from: -1.572 1.492 -9,205;
+        to: -1.572 1.492 40,795;
+        loop:true;
+        dur: 5000"
         ></a-entity>
+        <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
+        position="0.84838 1.72217 16.49" 
+        animation-mixer
+        animation="property: position;
+        from: -0.836 1.492 -9,205;
+        to: -0.836 1.492 40,795;
+        loop:true;
+        dur: 5000"
+        ></a-entity>
+        <a-entity light="type: spot; color: #f6ff79; angle: 13.48; intensity: 2.1; penumbra: 0.1; distance: 10" 
+        position="1.55288 1.72217 17.88504" rotation="0 180 0"
+        animation-mixer
+        animation="property: position;
+        from: -1.572 1.492 -9,205;
+        to: -1.572 1.492 40,795;
+        loop:true;
+        dur: 5000"
+        ></a-entity>
+        <a-entity light="type:spot ; color: #f6ff79; angle: 13.48; intensity: 2.1; penumbra: 0.1; distance: 10"
+        position="0.84838 1.72217 16.49" rotation="0 180 0"
+        animation-mixer
+        animation="property: position;
+        from: -0.836 1.492 -9,205;
+        to: -0.836 1.492 40,795;
+        loop:true;
+        dur: 5000"
+        ></a-entity>
+        <!--Car2Spots-->
+        <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
+        position="1.55288 1.72217 17.88504" 
+        animation-mixer
+        animation="property:position;
+        from:3.231 1.550 38,707;
+        to:3.231 1.550 -11,293;
+        loop:true;
+        dur:4000 "
+        ></a-entity>
+        <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
+        position="0.84838 1.72217 16.49" 
+        animation-mixer
+        animation="property:position;
+        from:2.353 1.550 38,707;
+        to:2.353 1.550 -11,293;
+        loop:true;
+        dur:4000 "
+        ></a-entity>
+        <a-entity light="type: spot; color: #f6ff79; angle: 13.48; intensity: 2.1; penumbra: 0.1; distance: 10" 
+        position="1.55288 1.72217 17.88504" 
+        animation-mixer
+        animation="property:position;
+        from:3.231 1.550 38,707;
+        to:3.231 1.550 -11,293;
+        loop:true;
+        dur:4000 "
+        ></a-entity>
+        <a-entity light="type:spot ; color: #f6ff79; angle: 13.48; intensity: 2.1; penumbra: 0.1; distance: 10"
+        position="0.84838 1.72217 16.49"
+        animation-mixer
+        animation="property:position;
+        from:2.353 1.550 38,707;
+        to:2.353 1.550 -11,293;
+        loop:true;
+        dur:4000 "></a-entity>
         <!--Car3Spots-->
         <a-entity light="type:point; color: #f6ff79; penumbra: 1; castShadow: true; intensity: 7.82; distance: 0.11"
         position="1.55288 1.72217 17.88504" 
